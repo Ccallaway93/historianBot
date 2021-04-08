@@ -1,7 +1,7 @@
 var http, director, cool, bot, router, server, port;
 
 http        = require('http');
-director    = require('director');
+director    = require('../historianBot/node_modules/director/lib/director');
 cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
 
