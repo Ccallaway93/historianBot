@@ -1,11 +1,15 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
-var botID = process.env.BOT_ID;
+const devBotId = '4e5259a681e67faef0a3db1051';
+const prodBotId = process.env.BOT_ID;
+
+var botID = devBotId;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/Historian$/;
+      console.log(request.text);
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage();
