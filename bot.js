@@ -2,10 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var handler = require('./Handlers/botHandler');
 
-const devBotId = '4e5259a681e67faef0a3db1051';
-const prodBotId = process.env.BOT_ID;
-
-var botID = devBotId;
+var botID = process.env.BOT_ID;
 
 async function respond() {
   var request =  JSON.parse(this.req.chunks[0]),
