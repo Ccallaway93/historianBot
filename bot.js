@@ -1,8 +1,11 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var handler = require('./Handlers/botHandler');
+require('dotenv').config()
 
 var botID = process.env.BOT_ID;
+console.log(botID);
+
 
 async function respond() {
   var request =  JSON.parse(this.req.chunks[0]),
@@ -57,7 +60,7 @@ function postMessage(botResponse) {
   botReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
-  botReq.end(JSON.stringify(body));
+  //botReq.end(JSON.stringify(body));
 }
 
 
