@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\FantasyFootball-WebApp"
+		}
+	],
+	"settings": {
+		"workbench.colorCustomizations": {
+			"activityBar.activeBackground": "#6db2db",
+			"activityBar.activeBorder": "#cd3293",
+			"activityBar.background": "#6db2db",
+			"activityBar.foreground": "#15202b",
+			"activityBar.inactiveForeground": "#15202b99",
+			"activityBarBadge.background": "#cd3293",
+			"activityBarBadge.foreground": "#e7e7e7",
+			"statusBar.background": "#449dd1",
+			"statusBar.foreground": "#15202b",
+			"statusBarItem.hoverBackground": "#2d83b5",
+			"titleBar.activeBackground": "#449dd1",
+			"titleBar.activeForeground": "#15202b",
+			"titleBar.inactiveBackground": "#449dd199",
+			"titleBar.inactiveForeground": "#15202b99"
+		},
+		"peacock.color": "#449DD1"
+	}
+}

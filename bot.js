@@ -1,18 +1,25 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
+var handler = require('./Handlers/botHandler');
 
 const devBotId = '4e5259a681e67faef0a3db1051';
 const prodBotId = process.env.BOT_ID;
 
 var botID = devBotId;
 
-function respond() {
-  var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/Historian$/;
+async function respond() {
+  var request =  JSON.parse(this.req.chunks[0]),
+      botRegex = /^\/Historian(?=[\s,])/;
+      console.log(botRegex);
       console.log(request.text);
+
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
-    postMessage();
+
+    var process = await handler.Handle(request.text);
+
+    postMessage(process);
+
     this.res.end();
   } else {
     console.log("don't care");
@@ -21,10 +28,10 @@ function respond() {
   }
 }
 
-function postMessage() {
-  var botResponse, options, body, botReq;
+function postMessage(botResponse) {
+  var options, body, botReq;
 
-  botResponse = 'Deebo Samuel is the next Jerry Rice';
+  //botResponse = 'Deebo Samuel is the next Jerry Rice';
 
   options = {
     hostname: 'api.groupme.com',
